@@ -30,14 +30,11 @@ function anagrams2(stringA, stringB) {
   let obj1 = {};
   let obj2 = {};
 
-  stringA.replace(/[^\w]/g, '').toLowerCase();
-  stringB.replace(/[^\w]/g, '').toLowerCase();
-
-  for (let char of stringA) {
+  for (let char of stringA.replace(/[^\w]/g, '').toLowerCase()) {
     obj1[char] = obj1[char] + 1 || 1;
   }
 
-  for (let char of stringB) {
+  for (let char of stringB.replace(/[^\w]/g, '').toLowerCase()) {
     obj2[char] = obj2[char] + 1 || 1;
   }
 
