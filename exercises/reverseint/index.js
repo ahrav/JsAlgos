@@ -27,4 +27,17 @@ function reverseInt(n) {
   );
 }
 
-module.exports = reverseInt;
+function reverseInt2(n) {
+  return (
+    Math.sign(n) *
+    parseInt(
+      n
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    )
+  );
+}
+
+module.exports = reverseInt2;
