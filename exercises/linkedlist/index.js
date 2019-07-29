@@ -67,10 +67,26 @@ class LinkedList {
   }
 
   insertLast(data) {
-    const node = new Node(data);
     const last = this.getLast();
-    node.next = last.next;
-    last.next = node;
+
+    if (last) {
+      // There are some existing nodes in our chain
+      last.next = new Node(data);
+    } else {
+      // The chain is empty!
+      this.head = new Node(data);
+    }
+  }
+
+  getAt(index) {
+    let curr = this.head;
+    let counter = 0;
+    while (curr) {
+      if (counter === index) return curr;
+      counter++;
+      curr = curr.next;
+    }
+    return null;
   }
 }
 
